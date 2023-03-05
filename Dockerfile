@@ -15,7 +15,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install tools from ubuntu repo
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      apt-transport-https bc curl file gnupg2 lsof nano net-tools \
+      apt-transport-https bc curl file gnupg2 less lsof nano net-tools \
       software-properties-common supervisor tree wget && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
