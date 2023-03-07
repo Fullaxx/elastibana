@@ -8,9 +8,8 @@ case $1 in
   *) echo "$0: <7|8>"; exit 1;;
 esac
 
-########################
-# Install Elastic repo #
-########################
+# ------------------------------------------------------------------------------
+# Install elastic repo
 ELASTICGPGKEY="/etc/apt/trusted.gpg.d/elasticsearch.gpg"
 wget -q https://artifacts.elastic.co/GPG-KEY-elasticsearch -O- | gpg --dearmor -o ${ELASTICGPGKEY}
 echo "deb [signed-by=${ELASTICGPGKEY}] https://artifacts.elastic.co/packages/${V}.x/apt stable main" | \
