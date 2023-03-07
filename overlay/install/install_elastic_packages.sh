@@ -29,8 +29,6 @@ rm -fv /etc/elasticsearch/elasticsearch.yml
 mkdir -p /usr/share/elasticsearch/config/
 cp -fv /elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config/
 ln -sfv /usr/share/elasticsearch/config/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml
-mkdir -p /usr/share/elasticsearch/data
-chown -R elasticsearch:elasticsearch /usr/share/elasticsearch
 
 # ------------------------------------------------------------------------------
 # Configure Kibana
