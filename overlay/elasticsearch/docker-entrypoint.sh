@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+
 # Files created by Elasticsearch should always be group writable too
 umask 0002
 run_as_other_user_if_needed() {
@@ -12,6 +13,7 @@ run_as_other_user_if_needed() {
     exec "${@}"
   fi
 }
+
 # Allow user specify custom CMD, maybe bin/elasticsearch itself
 # for example to directly specify `-E` style parameters for elasticsearch on k8s
 # or simply to run /bin/bash to check the image
@@ -34,6 +36,7 @@ if [[ "$1" != "eswrapper" ]]; then
     exec "$@"
   fi
 fi
+
 # Parse Docker env vars to customize Elasticsearch
 #
 # e.g. Setting the env var cluster.name=testcluster
@@ -54,6 +57,7 @@ do
     fi
   fi
 done < <(env)
+
 # The virtual file /proc/self/cgroup should list the current cgroup
 # membership. For each hierarchy, you can follow the cgroup path from
 # this file to the cgroup filesystem (usually /sys/fs/cgroup/) and
