@@ -20,7 +20,8 @@ tee -a /etc/apt/sources.list.d/elastic.list
 # Optional: install filebeat and logstash
 apt-get update
 apt-get install -y elasticsearch kibana
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
+apt-get clean
+rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/*
 
 # ------------------------------------------------------------------------------
 # Configure Elasticsearch
