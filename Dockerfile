@@ -41,5 +41,9 @@ HEALTHCHECK CMD /docker/healthcheck.sh
 EXPOSE 80 443 5601 9200
 
 # ------------------------------------------------------------------------------
+# Define Volumes
+VOLUME /data
+
+# ------------------------------------------------------------------------------
 # Run supervisord
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

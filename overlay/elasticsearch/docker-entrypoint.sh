@@ -81,10 +81,5 @@ if [[ -d bin/x-pack ]]; then
     fi
   fi
 fi
-if [[ "$(id -u)" == "0" ]]; then
-  # If requested and running as root, mutate the ownership of bind-mounts
-  if [[ -n "$TAKE_FILE_OWNERSHIP" ]]; then
-    chown -R 1000:0 /usr/share/elasticsearch/{data,logs}
-  fi
-fi
+
 run_as_other_user_if_needed /usr/share/elasticsearch/bin/elasticsearch "${es_opts[@]}"
