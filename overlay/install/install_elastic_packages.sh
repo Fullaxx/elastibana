@@ -12,8 +12,8 @@ esac
 # Install elastic repo
 ELASTICGPGKEY="/etc/apt/trusted.gpg.d/elasticsearch.gpg"
 wget -q https://artifacts.elastic.co/GPG-KEY-elasticsearch -O- | gpg --dearmor -o ${ELASTICGPGKEY}
-echo "deb [signed-by=${ELASTICGPGKEY}] https://artifacts.elastic.co/packages/${V}.x/apt stable main" | \
-tee -a /etc/apt/sources.list.d/elastic.list
+echo "deb [signed-by=${ELASTICGPGKEY}] https://artifacts.elastic.co/packages/${V}.x/apt stable main" \
+| tee -a /etc/apt/sources.list.d/elastic.list
 
 # ------------------------------------------------------------------------------
 # Install elasticsearch and kibana from elastic repo
